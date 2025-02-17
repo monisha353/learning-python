@@ -1,0 +1,698 @@
+#For Loops in Python
+#The Basic Structure of a for Loop
+
+#Example:
+
+cities = ["Bengaluru", "Mysuru", "Hubballi", "Mangaluru"]
+for city in cities:
+    print(city)
+
+#Using range() with for Loops
+
+#Example: Counting from 1 to 10
+for i in range(1, 11):
+    print(i)
+
+#Example: Counting by 2s from 1 to 10
+for i in range(1, 11, 2):
+    print(i)
+
+#Example: Printing each character in a string
+name = "Karnataka"
+for letter in name:
+    print(letter)
+
+#Nested for Loops
+#Example: Multiplication Table
+#Let’s print the multiplication table from 1 to 5 using a nested for loop.
+
+for i in range(1, 6):
+    for j in range(1, 6):
+        print(f"{i} x {j} = {i * j}")
+    print()  # To print an empty line after each table
+
+#Using break in a for Loop
+#Example: Stop the loop when you find a specific item
+#Let’s say you are searching for a specific city in a list:
+
+cities = ["Bengaluru", "Mysuru", "Hubballi", "Mangaluru"]
+for city in cities:
+    if city == "Hubballi":
+        print(f"Found {city}!")
+        break
+    print(city)
+
+#Example: Skip a specific item in a list
+#Let’s skip "Hubballi" while looping through the cities:
+
+cities = ["Bengaluru", "Mysuru", "Hubballi", "Mangaluru"]
+for city in cities:
+    if city == "Hubballi":
+        continue
+    print(city)
+
+
+#Looping Through a List with enumerate()
+#Example: Displaying the index and value of each city
+cities = ["Bengaluru", "Mysuru", "Hubballi", "Mangaluru"]
+for index, city in enumerate(cities):
+    print(f"City {index + 1}: {city}")
+
+# Using else with for Loops
+#Example:
+for city in cities:
+    print(city)
+else:
+    print("No more cities!")
+
+# Real-Life Example: Distributing Laddus
+#Imagine you have 5 laddus to distribute among friends. You can use a for loop to give each friend one laddu.
+
+laddus = 5
+friends = ["Rahul", "Sneha", "Aman", "Priya"]
+
+for friend in friends:
+    if laddus > 0:
+        print(f"{friend} gets a laddu!")
+        laddus -= 1
+    else:
+        print("No laddus left!")
+
+
+#Lists and Dictionaries with For Loops, List Comprehension, and Dictionary Comprehension
+
+# Looping Through Lists
+
+#Example: Sum of all numbers in a list
+numbers = [10, 20, 30, 40, 50]
+total = 0
+
+for num in numbers:
+    total += num
+
+print("Total sum:", total)
+
+#Example: Doubling each number in a list
+numbers = [1, 2, 3, 4, 5]
+doubled = []
+
+for num in numbers:
+    doubled.append(num * 2)
+
+print("Doubled List:", doubled)
+
+#Example: Printing Kannada food items
+foods = ["Dosa", "Idli", "Vada", "Bisibelebath"]
+
+for food in foods:
+    print(f"I like {food}")
+
+#Looping Through Dictionaries
+#Example: Iterating over dictionary keys
+student_marks = {"Anand": 85, "Geetha": 90, "Kumar": 78}
+
+for student in student_marks:
+    print(student)
+
+#Example: Iterating over dictionary values
+student_marks = {"Anand": 85, "Geetha": 90, "Kumar": 78}
+
+for marks in student_marks.values():
+    print(marks)
+
+#Example: Iterating over both keys and values
+student_marks = {"Anand": 85, "Geetha": 90, "Kumar": 78}
+
+for student, marks in student_marks.items():
+    print(f"{student} scored {marks} marks")
+
+#for Loops with range()
+#Example: Adding marks to students using index values
+students = ["Anand", "Geetha", "Kumar"]
+marks = [85, 90, 78]
+
+student_marks = {}
+
+for i in range(len(students)):
+    student_marks[students[i]] = marks[i]
+
+print(student_marks)
+
+# List Comprehension
+
+#Example 1: Squaring numbers in a list
+numbers = [1, 2, 3, 4, 5]
+squares = [num ** 2 for num in numbers]
+print(squares)
+
+#Example 2: Filtering even numbers
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = [num for num in numbers if num % 2 == 0]
+print(even_numbers)
+
+#Example 3: Uppercasing Kannada city names
+cities = ["Bengaluru", "Mysuru", "Hubballi", "Mangaluru"]
+uppercased_cities = [city.upper() for city in cities]
+print(uppercased_cities)
+
+#Dictionary Comprehension
+#Example 1: Creating a dictionary of squares
+numbers = [1, 2, 3, 4, 5]
+squares_dict = {num: num ** 2 for num in numbers}
+print(squares_dict)
+
+#Example 2: Converting a list of names to a dictionary of name lengths
+names = ["Anand", "Geetha", "Kumar"]
+name_lengths = {name: len(name) for name in names}
+print(name_lengths)
+
+#Example 3: Filtering cities with population above 10 lakhs (Localized Example)
+city_population = {
+    "Bengaluru": 84,
+    "Mysuru": 11,
+    "Hubballi": 9,
+    "Mangaluru": 5
+}
+large_cities = {city: population for city, population in city_population.items() if population > 10}
+print(large_cities)
+
+#Splitting Strings to Create Lists
+
+#Example 1: Splitting a sentence into words
+sentence = "I love coding in Python"
+words = sentence.split()
+print(words)
+
+#Example 2: Splitting a string with commas
+data = "apple,banana,mango"
+fruits = data.split(",")
+print(fruits)
+
+#Example 3: Limiting the number of splits
+sentence = "Python is fun to learn"
+words = sentence.split(" ", 2)
+print(words)
+
+#Function
+
+    # Block of code
+#Example: Basic function to greet a user
+def greet():
+    print("Hello! Welcome to the Python course.")
+greet()
+
+#Function Parameters
+#Example: Function with a parameter
+def greet_user(name):
+    print(f"Hello, {name}! Welcome to the Python course.")
+
+greet_user("Anand")
+
+#Returning Values from a Function
+#Example: Function that adds two numbers and returns the result
+def add_numbers(a, b):
+    return a + b
+
+result = add_numbers(10, 20)
+print("The sum is:", result)
+
+#Default Parameter Values
+
+#Example: Function with a default parameter
+def greet(name="Student"):
+    print(f"Hello, {name}! Welcome to the Python course.")
+
+greet()  # Uses default value "Student"
+greet("Geetha")  # Uses passed value "Geetha"
+
+#Local and Global Variables
+#Example: Local vs Global variables
+name = "Global Name"
+
+def greet():
+    name = "Local Name"
+    print(name)
+
+greet()  # Prints local variable
+print(name)  # Prints global variable
+
+
+##Keyword Arguments
+
+#Example:
+def display_info(name, age):
+    print(f"Name: {name}, Age: {age}")
+
+display_info(age=25, name="Kumar")
+
+# Variable-Length Arguments
+#Example: Using *args
+def total_sum(*numbers):
+    result = 0
+    for num in numbers:
+        result += num
+    return result
+
+print(total_sum(1, 2, 3, 4))
+
+#Example: Using **kwargs
+def student_info(**details):
+    for key, value in details.items():
+        print(f"{key}: {value}")
+
+student_info(name="Anand", age=22, course="Python")
+
+#Lambda Functions
+
+#Example: Lambda function to double a number
+double = lambda x: x * 2
+print(double(5))
+
+# Recursion
+#Example: Recursive function to calculate factorial
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))
+
+
+#Nested Functions
+#Example: Nested function in Python
+def outer_function(name):
+    def inner_function():
+        print(f"Hello, {name}!")
+    inner_function()
+
+outer_function("Anand")
+
+
+### **Introduction to OOP Concepts & Classes/Objects**
+
+### **2. Classes and Objects**
+
+#### **Class**:
+#### **Object**:
+#### **Example**:
+class Car:
+    # Attributes
+    def __init__(self, brand, model):
+        self.brand = brand  # Instance variable
+        self.model = model  # Instance variable
+
+    # Method
+    def display_info(self):
+        print(f"Car Brand: {self.brand}, Model: {self.model}")
+
+# Creating an object of the class
+my_car = Car("Toyota", "Corolla")
+my_car.display_info()
+
+### **3. Attributes (Instance Variables) and Methods**
+#### **Example**:
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print(f"Hello, my name is {self.name} and I am {self.age} years old.")
+
+# Creating objects
+person1 = Person("Arjun", 30)
+person2 = Person("Megha", 25)
+
+person1.greet()
+person2.greet()
+
+### **4. Creating Multiple Objects from a Class**
+#### **Example**:
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+
+    def bark(self):
+        print(f"{self.name} is barking!")
+
+# Creating multiple objects
+dog1 = Dog("Rex", "Golden Retriever")
+dog2 = Dog("Bolt", "Beagle")
+
+dog1.bark()
+dog2.bark()
+
+# **Constructors and the `self` Keyword**
+
+### **1. The `__init__()` Constructor**
+#### **Syntax**:
+class ClassName:
+    def __init__(self, parameter1, parameter2):
+        self.attribute1 = parameter1
+        self.attribute2 = parameter2
+
+### **2. Using `self` in Class Methods**
+#### **Example**:
+class Person:
+    def __init__(self, name, age):
+        self.name = name  # 'self.name' is an instance variable
+        self.age = age
+
+    def introduce(self):
+        print(f"My name is {self.name} and I am {self.age} years old.")
+
+# Creating an object
+person1 = Person("Arjun", 22)
+person1.introduce()
+
+### **3. Creating Multiple Objects with Different Attributes**
+#### **Example**:
+class Laptop:
+    def __init__(self, brand, price):
+        self.brand = brand
+        self.price = price
+
+    def show_info(self):
+        print(f"Laptop Brand: {self.brand}, Price: ₹{self.price}")
+
+laptop1 = Laptop("Dell", 45000)
+laptop2 = Laptop("HP", 55000)
+
+laptop1.show_info()
+laptop2.show_info()
+
+### **4. Optional Parameters in Constructors**
+#### **Example**:
+class Book:
+    def __init__(self, title, author="Unknown"):
+        self.title = title
+        self.author = author
+
+    def show_book(self):
+        print(f"Title: {self.title}, Author: {self.author}")
+
+book1 = Book("Python Programming")
+book2 = Book("Machine Learning", "Andrew Ng")
+
+book1.show_book()
+book2.show_book()
+
+
+# **The Four Pillars of OOP**
+### **1. Encapsulation**
+#### **Real-World Example in Code:**
+class ATM:
+    def __init__(self, balance):
+        self.__balance = balance  # Private attribute
+
+    def deposit(self, amount):
+        self.__balance += amount
+        print(f"Deposited {amount}. New balance: {self.__balance}")
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+            print(f"Withdrew {amount}. New balance: {self.__balance}")
+        else:
+            print("Insufficient balance")
+
+atm = ATM(1000)
+atm.deposit(500)
+atm.withdraw(300)
+
+#### **Programming Example in Code**:
+class User:
+    def __init__(self, username, password):
+        self.username = username
+        self.__password = password  # Private attribute
+
+    def get_username(self):
+        return self.username
+
+    def check_password(self, password):
+        return password == self.__password
+
+user = User("dev_karnataka", "pass1234")
+print(user.get_username())  # Access allowed
+print(user.check_password("wrong_pass"))  # Returns False
+print(user.check_password("pass1234"))  # Returns True
+
+### **2. Abstraction**
+#### **Real-World Example in Code:**
+class Car:
+    def start_engine(self):
+        print("Engine started")
+
+    def accelerate(self):
+        print("Car accelerating")
+
+    def brake(self):
+        print("Car stopping")
+
+car = Car()
+car.start_engine()  # Abstracts complex internal workings
+car.accelerate()
+car.brake()
+
+#### **Programming Example in Code**:
+class Database:
+    def __init__(self):
+        self.__storage = {}
+
+    def save_data(self, key, value):
+        self.__storage[key] = value
+        print(f"Data saved for {key}")
+
+    def get_data(self, key):
+        return self.__storage.get(key, "No data found")
+
+db = Database()
+db.save_data("user_101", {"name": "Raj", "age": 30})
+print(db.get_data("user_101"))
+
+### **3. Inheritance**
+#### **Real-World Example in Code:**
+class Family:
+    def __init__(self, surname):
+        self.surname = surname
+
+class Child(Family):
+    def __init__(self, surname, name):
+        super().__init__(surname)
+        self.name = name
+
+child = Child("Gowda", "Ajay")
+print(f"{child.name} {child.surname}")  # Inherits surname from Family
+
+#### **Programming Example in Code**:
+class User:
+    def __init__(self, username):
+        self.username = username
+
+    def login(self):
+        print(f"{self.username} logged in")
+
+class Admin(User):
+    def delete_user(self, user):
+        print(f"Admin {self.username} deleted user {user}")
+
+admin = Admin("karnataka_admin")
+admin.login()  # Inherited from User
+admin.delete_user("user_102")  # Admin-specific method
+
+### **4. Polymorphism**
+#### **Real-World Example in Code:**
+class Animal:
+    def make_sound(self):
+        pass
+
+class Dog(Animal):
+    def make_sound(self):
+        print("Bark")
+
+class Cat(Animal):
+    def make_sound(self):
+        print("Meow")
+
+animals = [Dog(), Cat()]
+for animal in animals:
+    animal.make_sound()
+
+#### **Programming Example in Code**:
+class Notification:
+    def send(self):
+        pass
+
+class EmailNotification(Notification):
+    def send(self):
+        print("Sending Email")
+
+class SMSNotification(Notification):
+    def send(self):
+        print("Sending SMS")
+
+notifications = [EmailNotification(), SMSNotification()]
+for notification in notifications:
+    notification.send()
+
+
+
+# **Getters, Setters, Method Overloading & Overriding, super(), Abstract Classes**
+### **1. Getters and Setters**
+#### **Example**:
+class Student:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age  # Private attribute
+
+    # Getter for age
+    def get_age(self):
+        return self.__age
+
+    # Setter for age
+    def set_age(self, age):
+        if age > 0:  # Validation
+            self.__age = age
+        else:
+            print("Invalid age")
+
+# Usage
+student = Student("Anita", 20)
+print("Age:", student.get_age())  # Accessing age with getter
+student.set_age(21)  # Modifying age with setter
+print("Updated Age:", student.get_age())
+
+### **2. Method Overloading**
+#### **Example**:
+class MathOperations:
+    def add(self, a, b, c=0):
+        return a + b + c  # Handles both 2 and 3 parameter cases
+
+# Usage
+math = MathOperations()
+print(math.add(5, 10))     # Two arguments
+print(math.add(5, 10, 15)) # Three arguments
+
+### **3. Method Overriding**
+#### **Example**:
+class Animal:
+    def sound(self):
+        print("This animal makes a sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")  # Overrides the parent class method
+
+# Usage
+animal = Animal()
+animal.sound()
+dog = Dog()
+dog.sound()  # Calls the overridden method in Dog class
+
+### **4. `super()` Function**
+#### **Example**:
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def sound(self):
+        print(f"{self.name} makes a sound")
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)  # Calling the parent class's __init__ method
+        self.breed = breed
+
+    def sound(self):
+        super().sound()  # Calling the parent class's sound method
+        print(f"{self.name} barks")
+
+# Usage
+dog = Dog("Buddy", "Labrador")
+dog.sound()
+
+### **5. Abstract Classes**
+#### **Example**:
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):  # Abstract base class
+    @abstractmethod
+    def start_engine(self):
+        pass  # Abstract method with no implementation
+
+class Car(Vehicle):
+    def start_engine(self):
+        print("Car engine started")
+
+# Usage
+car = Car()
+car.start_engine()
+
+
+
+# **Menu-Driven Programs in Python**
+### **Basic Structure of a Menu-Driven Program**
+def menu():
+    print("Welcome to the Menu-Driven Program!")
+    print("1. Option 1")
+    print("2. Option 2")
+    print("3. Option 3")
+    print("4. Exit")
+
+while True:
+    menu()
+    choice = input("Enter your choice (1-4): ")
+    
+    if choice == '1':
+        print("You selected Option 1.")
+    elif choice == '2':
+        print("You selected Option 2.")
+    elif choice == '3':
+        print("You selected Option 3.")
+    elif choice == '4':
+        print("Exiting the program. Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please try again.")
+
+### **Detailed Example**
+#### **Scenario: Simple Calculator**
+def menu():
+    print("\nSimple Calculator")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Exit")
+
+while True:
+    menu()
+    choice = input("Enter your choice (1-5): ")
+
+    if choice in ['1', '2', '3', '4']:
+        # Get two numbers from the user
+        try:
+            num1 = float(input("Enter the first number: "))
+            num2 = float(input("Enter the second number: "))
+        except ValueError:
+            print("Invalid input! Please enter numeric values.")
+            continue
+
+    if choice == '1':
+        print(f"Result: {num1} + {num2} = {num1 + num2}")
+    elif choice == '2':
+        print(f"Result: {num1} - {num2} = {num1 - num2}")
+    elif choice == '3':
+        print(f"Result: {num1} * {num2} = {num1 * num2}")
+    elif choice == '4':
+        if num2 == 0:
+            print("Error: Division by zero is not allowed.")
+        else:
+            print(f"Result: {num1} / {num2} = {num1 / num2}")
+    elif choice == '5':
+        print("Exiting the calculator. Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please select a valid option.")
